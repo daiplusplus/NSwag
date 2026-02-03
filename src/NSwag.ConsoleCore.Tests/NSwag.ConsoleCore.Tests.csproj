@@ -3,6 +3,8 @@
     <TargetFramework>net10.0</TargetFramework>
     <NoWarn>$(NoWarn);CA1707</NoWarn>
     <OutputType>Exe</OutputType>
+	  <IsCSharpGen>true</IsCSharpGen>
+	  <IsYaml>true</IsYaml>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +17,8 @@
     </PackageReference>
     <PackageReference Include="Verify.XunitV3" />
   </ItemGroup>
+
+	<Import Project="..\NJsonSchemaBin.props" />
 
   <ItemGroup>
     <ProjectReference Include="..\NSwag.CodeGeneration.CSharp.Tests\NSwag.CodeGeneration.CSharp.Tests.csproj" />

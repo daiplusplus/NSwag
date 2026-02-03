@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+	  <PackageReference Include="Microsoft.TypeScript.MSBuild" />
 	  <!--
 	  <PackageReference Include="NJsonSchema.CodeGeneration.TypeScript" />
 	  -->

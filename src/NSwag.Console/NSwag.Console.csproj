@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net462</TargetFramework>
     <OutputType>Exe</OutputType>
@@ -8,16 +8,17 @@
     <AssemblyName>NSwag</AssemblyName>
     <RootNamespace>NSwag</RootNamespace>
     <DependsOnNETStandard>true</DependsOnNETStandard>
-	  <IsCSharpGen>true</IsCSharpGen>
-	  <IsYaml>true</IsYaml>
+    <IsCSharpGen>true</IsCSharpGen>
+    <IsYaml>true</IsYaml>
   </PropertyGroup>
 
-	<Import Project="..\NJsonSchemaBin.props" />
-
+  <Import Project="..\NJsonSchemaBin.props" />
 
   <ItemGroup>
     <ProjectReference Include="..\NSwag.AspNetCore.Launcher\NSwag.AspNetCore.Launcher.csproj" />
     <ProjectReference Include="..\NSwag.Commands\NSwag.Commands.csproj" />
+
+    <PackageReference Include="Fluid.Core" />
   </ItemGroup>
 
   <ItemGroup>

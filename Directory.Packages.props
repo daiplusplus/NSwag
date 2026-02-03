@@ -6,6 +6,7 @@
   <ItemGroup>
     <PackageVersion Include="AvalonEdit" Version="5.0.3" />
     <PackageVersion Include="Expression.Interaction" Version="3.0.40218" />
+    <PackageVersion Include="Fluid.Core" Version="2.30.0" />
     <PackageVersion Include="GitHubActionsTestLogger" Version="2.4.1" />
     <PackageVersion Include="Microsoft.AspNet.WebApi.Client" Version="5.2.3" />
     <PackageVersion Include="Microsoft.AspNet.WebApi.Core" Version="5.2.3" />
@@ -37,6 +38,10 @@
     <PackageVersion Include="System.ValueTuple" Version="4.6.1" />
     <PackageVersion Include="System.Runtime.Loader" Version="4.0.0" />
     <PackageVersion Include="System.Text.Json" Version="10.0.2" />
+    <!--
+    <PackageVersion Include="Microsoft.TypeScript.MSBuild" Version="4.3.5" />
+	-->
+    <PackageVersion Include="Microsoft.TypeScript.MSBuild" Version="5.9.3" />
     <PackageVersion Include="Verify.XunitV3" Version="30.5.0" />
     <PackageVersion Include="xunit.v3" Version="3.0.0" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.3" />

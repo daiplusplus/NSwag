@@ -50,27 +50,35 @@
 	-->
 
 	<ItemGroup Condition="('$(IsCSharpGen)' == 'true') and ('$(TargetFramework)' == 'net462')">
+		<PackageReference Include="Fluid.Core" />
+
 		<Reference Include="C:\git\forks\NJsonSchema\artifacts\bin\NJsonSchema.CodeGeneration\debug_net462\NJsonSchema.CodeGeneration.dll" />
 		<Reference Include="C:\git\forks\NJsonSchema\artifacts\bin\NJsonSchema.CodeGeneration.CSharp\debug_net462\NJsonSchema.CodeGeneration.CSharp.dll" />
 	</ItemGroup>
 
 	<ItemGroup Condition="('$(IsCSharpGen)' == 'true') and ('$(TargetFramework)' == 'netstandard2.0')">
+		<PackageReference Include="Fluid.Core" />
+
 		<Reference Include="C:\git\forks\NJsonSchema\artifacts\bin\NJsonSchema.CodeGeneration\debug_netstandard2.0\NJsonSchema.CodeGeneration.dll" />
 		<Reference Include="C:\git\forks\NJsonSchema\artifacts\bin\NJsonSchema.CodeGeneration.CSharp\debug_netstandard2.0\NJsonSchema.CodeGeneration.CSharp.dll" />
 	</ItemGroup>
 
 	<ItemGroup Condition="('$(IsCSharpGen)' == 'true') and ('$(TargetFramework)' == 'net8.0')">
+		<PackageReference Include="Fluid.Core" />
+
 		<Reference Include="C:\git\forks\NJsonSchema\artifacts\bin\NJsonSchema.CodeGeneration\debug_net8.0\NJsonSchema.CodeGeneration.dll" />
 		<Reference Include="C:\git\forks\NJsonSchema\artifacts\bin\NJsonSchema.CodeGeneration.CSharp\debug_net8.0\NJsonSchema.CodeGeneration.CSharp.dll" />
 	</ItemGroup>
 
 	<ItemGroup Condition="('$(IsCSharpGen)' == 'true') and ('$(TargetFramework)' == 'net9.0')">
+		<PackageReference Include="Fluid.Core" />
 		<!-- Reuse net8.0: -->
 		<Reference Include="C:\git\forks\NJsonSchema\artifacts\bin\NJsonSchema.CodeGeneration\debug_net8.0\NJsonSchema.CodeGeneration.dll" />
 		<Reference Include="C:\git\forks\NJsonSchema\artifacts\bin\NJsonSchema.CodeGeneration.CSharp\debug_net8.0\NJsonSchema.CodeGeneration.CSharp.dll" />
 	</ItemGroup>
 
 	<ItemGroup Condition="('$(IsCSharpGen)' == 'true') and ('$(TargetFramework)' == 'net10.0')">
+		<PackageReference Include="Fluid.Core" />
 		<!-- Reuse net8.0: -->
 		<Reference Include="C:\git\forks\NJsonSchema\artifacts\bin\NJsonSchema.CodeGeneration\debug_net8.0\NJsonSchema.CodeGeneration.dll" />
 		<Reference Include="C:\git\forks\NJsonSchema\artifacts\bin\NJsonSchema.CodeGeneration.CSharp\debug_net8.0\NJsonSchema.CodeGeneration.CSharp.dll" />
