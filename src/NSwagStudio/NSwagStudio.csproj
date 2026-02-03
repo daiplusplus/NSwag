@@ -14,7 +14,12 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <NoWarn>$(NoWarn);CS0618</NoWarn>
     <AnalysisLevel>none</AnalysisLevel>
+
+	  <IsCSharpGen>true</IsCSharpGen>
+	  <IsYaml>true</IsYaml>
   </PropertyGroup>
+
+	<Import Project="..\NJsonSchemaBin.props" />
 
   <PropertyGroup Condition=" '$(Configuration))' == 'Debug' ">
     <DebugType>full</DebugType>

@@ -3,9 +3,14 @@
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
+
+	  <IsCSharpGen>true</IsCSharpGen>
+	  <IsYaml>true</IsYaml>
   </PropertyGroup>
 
-  <ItemGroup>
+	<Import Project="..\NJsonSchemaBin.props" />
+
+	<ItemGroup>
     <ProjectReference Include="..\NSwag.AspNetCore\NSwag.AspNetCore.csproj" />
   </ItemGroup>
 

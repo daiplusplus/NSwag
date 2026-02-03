@@ -5,7 +5,11 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn),618,1591;CS8603;CS8618;CS8625;CA1861</NoWarn>
     <Nullable>enable</Nullable>
+
+	  <IsCSharpGen>true</IsCSharpGen>
   </PropertyGroup>
+
+	<Import Project="..\NJsonSchemaBin.props" />
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" />

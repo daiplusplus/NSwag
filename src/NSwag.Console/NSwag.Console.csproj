@@ -8,7 +8,12 @@
     <AssemblyName>NSwag</AssemblyName>
     <RootNamespace>NSwag</RootNamespace>
     <DependsOnNETStandard>true</DependsOnNETStandard>
+	  <IsCSharpGen>true</IsCSharpGen>
+	  <IsYaml>true</IsYaml>
   </PropertyGroup>
+
+	<Import Project="..\NJsonSchemaBin.props" />
+
 
   <ItemGroup>
     <ProjectReference Include="..\NSwag.AspNetCore.Launcher\NSwag.AspNetCore.Launcher.csproj" />

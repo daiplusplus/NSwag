@@ -43,7 +43,7 @@ components:
           type: string
           format: uuid";
 
-            var document = await OpenApiYamlDocument.FromYamlAsync(yaml);
+            var document = await OpenApiYamlDocument.FromYamlAsync(yaml, documentPath: null);
 
             // Act
             var codeGenerator = new TypeScriptClientGenerator(document, new TypeScriptClientGeneratorSettings());
@@ -103,7 +103,7 @@ components:
         }
       }
     },
-    
+
   },
   ""components"": {}
 }";
@@ -171,7 +171,7 @@ components:
         }
       }
     },
-    
+
   },
   ""components"": {}
 }";

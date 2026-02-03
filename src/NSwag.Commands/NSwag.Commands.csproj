@@ -5,7 +5,12 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <!-- obsolete usage, missing comments -->
     <NoWarn>$(NoWarn),618,1591</NoWarn>
+
+	  <IsCSharpGen>true</IsCSharpGen>
+	  <IsYaml>true</IsYaml>
   </PropertyGroup>
+
+	<Import Project="..\NJsonSchemaBin.props" />
 
   <ItemGroup>
     <EmbeddedResource Include="Commands\Generation\AspNetCore\AspNetCore.targets" />

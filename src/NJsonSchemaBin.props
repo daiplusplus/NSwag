@@ -1,5 +1,11 @@
 <Project>
 
+	<!--
+	<Import Project="..\NJsonSchemaBin.props" />
+	<IsCSharpGen>true</IsCSharpGen>
+	<IsYaml>true</IsYaml>
+	-->
+
 	<ItemGroup Condition="'$(TargetFramework)' == 'net462'">
 		<Reference Include="C:\git\forks\NJsonSchema\artifacts\bin\NJsonSchema\debug_net462\NJsonSchema.dll" />
 		<Reference Include="C:\git\forks\NJsonSchema\artifacts\bin\NJsonSchema\debug_net462\NJsonSchema.Annotations.dll" />
@@ -22,6 +28,7 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net9.0'">
+		<!-- Reuse net8.0: -->
 		<Reference Include="C:\git\forks\NJsonSchema\artifacts\bin\NJsonSchema\debug_net8.0\NJsonSchema.dll" />
 		<Reference Include="C:\git\forks\NJsonSchema\artifacts\bin\NJsonSchema\debug_net8.0\NJsonSchema.Annotations.dll" />
 		<Reference Include="C:\git\forks\NJsonSchema\artifacts\bin\NJsonSchema.NewtonsoftJson\debug_net8.0\NJsonSchema.NewtonsoftJson.dll" />
@@ -29,6 +36,7 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net10.0'">
+		<!-- Reuse net8.0: -->
 		<Reference Include="C:\git\forks\NJsonSchema\artifacts\bin\NJsonSchema\debug_net8.0\NJsonSchema.dll" />
 		<Reference Include="C:\git\forks\NJsonSchema\artifacts\bin\NJsonSchema\debug_net8.0\NJsonSchema.Annotations.dll" />
 		<Reference Include="C:\git\forks\NJsonSchema\artifacts\bin\NJsonSchema.NewtonsoftJson\debug_net8.0\NJsonSchema.NewtonsoftJson.dll" />
@@ -36,6 +44,10 @@
 	</ItemGroup>
 
 	<!--IsCSharpGen: -->
+	<!--
+	<IsCSharpGen>true</IsCSharpGen>
+	<IsYaml>true</IsYaml>
+	-->
 
 	<ItemGroup Condition="('$(IsCSharpGen)' == 'true') and ('$(TargetFramework)' == 'net462')">
 		<Reference Include="C:\git\forks\NJsonSchema\artifacts\bin\NJsonSchema.CodeGeneration\debug_net462\NJsonSchema.CodeGeneration.dll" />
@@ -48,6 +60,18 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="('$(IsCSharpGen)' == 'true') and ('$(TargetFramework)' == 'net8.0')">
+		<Reference Include="C:\git\forks\NJsonSchema\artifacts\bin\NJsonSchema.CodeGeneration\debug_net8.0\NJsonSchema.CodeGeneration.dll" />
+		<Reference Include="C:\git\forks\NJsonSchema\artifacts\bin\NJsonSchema.CodeGeneration.CSharp\debug_net8.0\NJsonSchema.CodeGeneration.CSharp.dll" />
+	</ItemGroup>
+
+	<ItemGroup Condition="('$(IsCSharpGen)' == 'true') and ('$(TargetFramework)' == 'net9.0')">
+		<!-- Reuse net8.0: -->
+		<Reference Include="C:\git\forks\NJsonSchema\artifacts\bin\NJsonSchema.CodeGeneration\debug_net8.0\NJsonSchema.CodeGeneration.dll" />
+		<Reference Include="C:\git\forks\NJsonSchema\artifacts\bin\NJsonSchema.CodeGeneration.CSharp\debug_net8.0\NJsonSchema.CodeGeneration.CSharp.dll" />
+	</ItemGroup>
+
+	<ItemGroup Condition="('$(IsCSharpGen)' == 'true') and ('$(TargetFramework)' == 'net10.0')">
+		<!-- Reuse net8.0: -->
 		<Reference Include="C:\git\forks\NJsonSchema\artifacts\bin\NJsonSchema.CodeGeneration\debug_net8.0\NJsonSchema.CodeGeneration.dll" />
 		<Reference Include="C:\git\forks\NJsonSchema\artifacts\bin\NJsonSchema.CodeGeneration.CSharp\debug_net8.0\NJsonSchema.CodeGeneration.CSharp.dll" />
 	</ItemGroup>

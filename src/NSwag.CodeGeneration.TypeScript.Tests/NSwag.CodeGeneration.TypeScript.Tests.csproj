@@ -4,9 +4,14 @@
     <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
     <NoWarn>$(NoWarn);CA1707;IDE1006</NoWarn>
     <OutputType>Exe</OutputType>
+
+	  <IsCSharpGen>true</IsCSharpGen>
+	  <IsYaml>true</IsYaml>
   </PropertyGroup>
 
-  <ItemGroup>
+	<Import Project="..\NJsonSchemaBin.props" />
+
+	<ItemGroup>
     <PackageReference Include="GitHubActionsTestLogger" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
     <PackageReference Include="Verify.XunitV3" />
