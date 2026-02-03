@@ -1,14 +1,21 @@
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net462;net8.0</TargetFrameworks>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-  </PropertyGroup>
-  
-  <ItemGroup>
-    <PackageReference Include="NJsonSchema.CodeGeneration" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <ProjectReference Include="..\NSwag.Core\NSwag.Core.csproj" />
-  </ItemGroup>
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;net462;net8.0</TargetFrameworks>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+		<IsCSharpGen>true</IsCSharpGen>
+	</PropertyGroup>
+
+	<Import Project="..\NJsonSchemaBin.props" />
+
+	<ItemGroup>
+	<!--
+	<PackageReference Include="NJsonSchema.CodeGeneration" />
+	-->
+		<PackageReference Include="System.Memory" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\NSwag.Core\NSwag.Core.csproj" />
+	</ItemGroup>
 </Project>

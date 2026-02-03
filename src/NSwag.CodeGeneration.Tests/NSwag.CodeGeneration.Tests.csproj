@@ -5,10 +5,14 @@
     <OutputType>Exe</OutputType>
   </PropertyGroup>
 
-  <ItemGroup>
+  <Import Project="..\NJsonSchemaBin.props" />
+
+	<ItemGroup>
     <PackageReference Include="GitHubActionsTestLogger" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
+	  <!--
     <PackageReference Include="NJsonSchema.NewtonsoftJson" />
+	-->
     <PackageReference Include="Verify.XunitV3" />
     <PackageReference Include="xunit.v3" />
     <PackageReference Include="xunit.runner.visualstudio">

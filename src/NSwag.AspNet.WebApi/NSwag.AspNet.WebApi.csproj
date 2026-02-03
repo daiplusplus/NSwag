@@ -1,15 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net462</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+	  <IsCSharpGen>true</IsCSharpGen>
   </PropertyGroup>
-  
+
+	<Import Project="..\NJsonSchemaBin.props"/>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.WebApi.Core" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" />
+	  <!--
     <PackageReference Include="NJsonSchema.NewtonsoftJson" />
+	-->
   </ItemGroup>
-  
+
   <ItemGroup>
     <ProjectReference Include="..\NSwag.Annotations\NSwag.Annotations.csproj" />
     <ProjectReference Include="..\NSwag.Core\NSwag.Core.csproj" />

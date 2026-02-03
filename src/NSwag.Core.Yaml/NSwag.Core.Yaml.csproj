@@ -1,13 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net462;net8.0</TargetFrameworks>
     <RootNamespace>NSwag</RootNamespace>
+	  <IsYaml>true</IsYaml>
   </PropertyGroup>
-  
+
+	<Import Project="..\NJsonSchemaBin.props"/>
   <ItemGroup>
+	  <!--
     <PackageReference Include="NJsonSchema.Yaml" />
+	-->
+	  <PackageReference Include="YamlDotNet" />
+	  <PackageReference Include="System.ValueTuple" />
+	  <PackageReference Include="Microsoft.CSharp" /><!-- Needed for "C:\git\forks\NSwag\src\NSwag.Core.Yaml\OpenApiYamlDocument.cs(110,20,110,30): error CS0656: Missing compiler required member 'Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo.Create'" -->
   </ItemGroup>
-  
+
   <ItemGroup>
     <ProjectReference Include="..\NSwag.Core\NSwag.Core.csproj" />
   </ItemGroup>

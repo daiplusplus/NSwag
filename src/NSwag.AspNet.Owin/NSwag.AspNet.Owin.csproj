@@ -3,7 +3,10 @@
     <TargetFramework>net462</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <DefineConstants>$(DefineConstants);AspNetOwin</DefineConstants>
+	  <IsCSharpGen>true</IsCSharpGen>
   </PropertyGroup>
+
+	<Import Project="..\NJsonSchemaBin.props"/>
 
   <ItemGroup>
     <EmbeddedResource Include="ReDoc\**\*" Exclude="bin\**;obj\**;**\*.xproj;packages\**;@(EmbeddedResource)" />

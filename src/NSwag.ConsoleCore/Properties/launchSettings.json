@@ -2,7 +2,7 @@
   "profiles": {
     "NSwag.ConsoleCore": {
       "commandName": "Project",
-      "commandLineArgs": "run \"D:\\pfsense\\pfsense.nswag\""
+      "commandLineArgs": "run \"C:\\git\\forks\\NSwag\\src\\NSwag.Tests\\has-document-path.json\""
     }
   }
 }

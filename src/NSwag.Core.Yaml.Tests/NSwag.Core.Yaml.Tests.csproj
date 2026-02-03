@@ -1,12 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  
+
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <IsPackable>false</IsPackable>
     <NoWarn>$(NoWarn);CA1707</NoWarn>
     <OutputType>Exe</OutputType>
+	  <IsYaml>true</IsYaml>
   </PropertyGroup>
-  
+
+	<Import Project="..\NJsonSchemaBin.props"/>
+
   <ItemGroup>
     <PackageReference Include="GitHubActionsTestLogger" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
@@ -16,11 +19,11 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-  
+
   <ItemGroup>
     <ProjectReference Include="..\NSwag.Core.Yaml\NSwag.Core.Yaml.csproj" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <Content Include="References\YamlReferencesTest\*.json" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="References\YamlReferencesTest\*.yaml" CopyToOutputDirectory="PreserveNewest" />

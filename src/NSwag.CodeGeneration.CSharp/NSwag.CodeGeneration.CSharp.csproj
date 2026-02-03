@@ -2,9 +2,12 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net462;net8.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+	  <IsCSharpGen>true</IsCSharpGen>
   </PropertyGroup>
 
-  <ItemGroup>
+	<Import Project="..\NJsonSchemaBin.props" />
+
+	<ItemGroup>
     <EmbeddedResource Include="Templates\*.liquid" />
   </ItemGroup>
 
@@ -13,7 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
+	  <!--
     <PackageReference Include="NJsonSchema.CodeGeneration.CSharp" />
+	-->
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net462;net8.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -6,8 +6,13 @@
     <NoWarn>$(NoWarn),618</NoWarn>
   </PropertyGroup>
 
-  <ItemGroup>
+	<Import Project="..\NJsonSchemaBin.props"/>
+
+	<ItemGroup>
+	  <!--
     <PackageReference Include="NJsonSchema.NewtonsoftJson" />
+	  -->
+		<PackageReference Include="Namotion.Reflection" />
   </ItemGroup>
 
   <ItemGroup>

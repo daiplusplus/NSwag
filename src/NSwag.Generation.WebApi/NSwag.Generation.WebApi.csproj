@@ -3,7 +3,10 @@
   <PropertyGroup>
     <TargetFrameworks>net462;netstandard2.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+	  <IsCSharpGen>true</IsCSharpGen>
   </PropertyGroup>
+
+	<Import Project="..\NJsonSchemaBin.props"/>
 
   <ItemGroup>
     <ProjectReference Include="..\NSwag.Generation\NSwag.Generation.csproj" />
