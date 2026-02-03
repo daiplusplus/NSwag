@@ -13,7 +13,7 @@ namespace NSwag.Core.Tests.Serialization
 
             // Act
             var json = document.ToJson(SchemaType.Swagger2);
-            document = await OpenApiDocument.FromJsonAsync(json);
+            document = await OpenApiDocument.FromJsonAsync(json, documentPath: null);
 
             // Assert
             var requestBody = document.Paths["/baz"][OpenApiOperationMethod.Get].RequestBody;
@@ -28,7 +28,7 @@ namespace NSwag.Core.Tests.Serialization
 
             // Act
             var json = document.ToJson(SchemaType.OpenApi3);
-            document = await OpenApiDocument.FromJsonAsync(json);
+            document = await OpenApiDocument.FromJsonAsync(json, documentPath: null);
 
             // Assert
             var requestBody = document.Paths["/baz"][OpenApiOperationMethod.Get].RequestBody;
@@ -43,7 +43,7 @@ namespace NSwag.Core.Tests.Serialization
 
             // Act
             var json = document.ToJson(SchemaType.OpenApi3);
-            document = await OpenApiDocument.FromJsonAsync(json);
+            document = await OpenApiDocument.FromJsonAsync(json, documentPath: null);
 
             var parameter = document.Paths["/baz"][OpenApiOperationMethod.Get].Parameters
                 .Single(p => p.Kind == OpenApiParameterKind.Body);
@@ -65,7 +65,7 @@ namespace NSwag.Core.Tests.Serialization
 
             // Act
             var json = document.ToJson(SchemaType.OpenApi3);
-            document = await OpenApiDocument.FromJsonAsync(json);
+            document = await OpenApiDocument.FromJsonAsync(json, documentPath: null);
 
             var parameter = document.Paths["/baz"][OpenApiOperationMethod.Get].Parameters
                 .Single(p => p.Kind == OpenApiParameterKind.Body);
@@ -86,7 +86,7 @@ namespace NSwag.Core.Tests.Serialization
 
             // Act
             var json = document.ToJson(SchemaType.OpenApi3);
-            document = await OpenApiDocument.FromJsonAsync(json);
+            document = await OpenApiDocument.FromJsonAsync(json, documentPath: null);
 
             var parameter = document.Paths["/baz"][OpenApiOperationMethod.Get].Parameters
                 .Single(p => p.Kind == OpenApiParameterKind.Body);
@@ -107,7 +107,7 @@ namespace NSwag.Core.Tests.Serialization
 
             // Act
             var json = document.ToJson(SchemaType.OpenApi3);
-            document = await OpenApiDocument.FromJsonAsync(json);
+            document = await OpenApiDocument.FromJsonAsync(json, documentPath: null);
 
             var parameter = document.Paths["/baz"][OpenApiOperationMethod.Get].Parameters
                 .Single(p => p.Kind == OpenApiParameterKind.Body);
@@ -128,7 +128,7 @@ namespace NSwag.Core.Tests.Serialization
 
             // Act
             var json = document.ToJson(SchemaType.OpenApi3);
-            document = await OpenApiDocument.FromJsonAsync(json);
+            document = await OpenApiDocument.FromJsonAsync(json, documentPath: null);
 
             var requestBody = document.Paths["/baz"][OpenApiOperationMethod.Get].RequestBody;
 
@@ -149,7 +149,7 @@ namespace NSwag.Core.Tests.Serialization
 
             // Act
             var json = document.ToJson(SchemaType.OpenApi3);
-            document = await OpenApiDocument.FromJsonAsync(json);
+            document = await OpenApiDocument.FromJsonAsync(json, documentPath: null);
 
             var requestBody = document.Paths["/baz"][OpenApiOperationMethod.Get].RequestBody;
 
@@ -171,7 +171,7 @@ namespace NSwag.Core.Tests.Serialization
 
             // Act
             var json = document.ToJson(SchemaType.OpenApi3);
-            document = await OpenApiDocument.FromJsonAsync(json);
+            document = await OpenApiDocument.FromJsonAsync(json, documentPath: null);
 
             var requestBody = document.Paths["/baz"][OpenApiOperationMethod.Get].RequestBody;
             requestBody.Content["application/json"] = new OpenApiMediaType
@@ -194,7 +194,7 @@ namespace NSwag.Core.Tests.Serialization
 
             // Act
             var json = document.ToJson(SchemaType.OpenApi3);
-            document = await OpenApiDocument.FromJsonAsync(json);
+            document = await OpenApiDocument.FromJsonAsync(json, documentPath: null);
 
             var requestBody = document.Paths["/baz"][OpenApiOperationMethod.Get].RequestBody;
             requestBody.Description += "123";

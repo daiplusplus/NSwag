@@ -23,7 +23,7 @@ namespace NSwag.Commands
 
         public abstract Task<object> RunAsync(CommandLineProcessor processor, IConsoleHost host);
 
-        protected static Task<OpenApiDocument> ReadSwaggerDocumentAsync(string input)
+        protected static Task<OpenApiDocument> ReadSwaggerDocumentAsync(string input, string documentPath)
         {
             if (!IsJson(input) && !IsYaml(input))
             {
@@ -56,11 +56,11 @@ namespace NSwag.Commands
             {
                 if (IsYaml(input))
                 {
-                    return OpenApiYamlDocument.FromYamlAsync(input);
+                    return OpenApiYamlDocument.FromYamlAsync(input, documentPath);
                 }
                 else
                 {
-                    return OpenApiDocument.FromJsonAsync(input);
+                    return OpenApiDocument.FromJsonAsync(input, documentPath);
                 }
             }
         }

@@ -137,19 +137,10 @@ namespace NSwag
 
         /// <summary>Creates a Swagger specification from a JSON string.</summary>
         /// <param name="data">The JSON data.</param>
-        /// <param name="cancellationToken">The cancellation token.</param>
-        /// <returns>The <see cref="OpenApiDocument"/>.</returns>
-        public static Task<OpenApiDocument> FromJsonAsync(string data, CancellationToken cancellationToken = default)
-        {
-            return FromJsonAsync(data, null, SchemaType.Swagger2, null, cancellationToken);
-        }
-
-        /// <summary>Creates a Swagger specification from a JSON string.</summary>
-        /// <param name="data">The JSON data.</param>
         /// <param name="documentPath">The document path (URL or file path) for resolving relative document references.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>The <see cref="OpenApiDocument"/>.</returns>
-        public static Task<OpenApiDocument> FromJsonAsync(string data, string documentPath, CancellationToken cancellationToken = default)
+        public static Task<OpenApiDocument> FromJsonAsync(string data, string documentPath = null, CancellationToken cancellationToken = default)
         {
             return FromJsonAsync(data, documentPath, SchemaType.Swagger2, null, cancellationToken);
         }

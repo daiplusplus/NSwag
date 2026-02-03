@@ -21,7 +21,7 @@ paths:
           description: get description";
 
             // Act
-            var document = await OpenApiYamlDocument.FromYamlAsync(yaml);
+            var document = await OpenApiYamlDocument.FromYamlAsync(yaml, documentPath: null);
             yaml = document.ToYaml();
 
             // Assert
@@ -47,7 +47,7 @@ paths:
           description: baz";
 
             // Act
-            var document = await OpenApiYamlDocument.FromYamlAsync(yaml);
+            var document = await OpenApiYamlDocument.FromYamlAsync(yaml, documentPath: null);
             yaml = document.ToYaml();
 
             // Assert
@@ -74,7 +74,7 @@ paths:
           description: baz";
 
             // Act
-            var document = await OpenApiYamlDocument.FromYamlAsync(yaml);
+            var document = await OpenApiYamlDocument.FromYamlAsync(yaml, documentPath: null);
             yaml = document.ToYaml();
 
             // Assert

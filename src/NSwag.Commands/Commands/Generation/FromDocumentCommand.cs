@@ -17,6 +17,7 @@ namespace NSwag.Commands.Generation
     public class FromDocumentCommand : OutputCommandBase, INotifyPropertyChanged
     {
         private string _json;
+        private string _documentPath;
         private string _url = "http://redocly.github.io/redoc/openapi.yaml";
 
         /// <summary>Gets or sets the input Swagger specification.</summary>
@@ -30,6 +31,18 @@ namespace NSwag.Commands.Generation
                 OnPropertyChanged();
             }
         }
+
+         /// <summary>Optional. Gets or sets the local filesystem path used to resolve external JSON references, for example.</summary>
+         [JsonProperty("documentPath", NullValueHandling = NullValueHandling.Ignore)]
+         public string DocumentPath
+         {
+             get => _documentPath;
+             set
+             {
+                 _documentPath = value;
+                 OnPropertyChanged();
+             }
+         }
 
         /// <summary>Gets or sets the input Swagger specification URL.</summary>
         [JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
@@ -57,8 +70,9 @@ namespace NSwag.Commands.Generation
         /// <summary>Loads the Swagger spec.</summary>
         public async Task<OpenApiDocument> RunAsync()
         {
-            var input = !string.IsNullOrEmpty(Json) ? Json : Url;
-            return await ReadSwaggerDocumentAsync(input);
+            var input   = !string.IsNullOrEmpty(Json) ? Json : Url;
+            var docPath = string.IsNullOrEmpty(DocumentPath) ? null : DocumentPath;
+            return await ReadSwaggerDocumentAsync(input, docPath);
         }
 
         /// <summary>Occurs when property changed.</summary>

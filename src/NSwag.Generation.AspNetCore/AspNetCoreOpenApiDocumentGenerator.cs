@@ -399,7 +399,7 @@ namespace NSwag.Generation.AspNetCore
         private async Task<OpenApiDocument> CreateDocumentAsync()
         {
             var document = !string.IsNullOrEmpty(Settings.DocumentTemplate) ?
-                await OpenApiDocument.FromJsonAsync(Settings.DocumentTemplate).ConfigureAwait(false) :
+                await OpenApiDocument.FromJsonAsync(Settings.DocumentTemplate, documentPath: Settings.DocumenPath).ConfigureAwait(false) :
                 new OpenApiDocument();
 
             var version = "";

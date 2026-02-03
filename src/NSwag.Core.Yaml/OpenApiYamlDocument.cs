@@ -22,15 +22,6 @@ namespace NSwag
     {
         /// <summary>Creates a Swagger specification from a YAML string.</summary>
         /// <param name="data">The JSON or YAML data.</param>
-        /// <param name="cancellationToken">The cancellation token.</param>
-        /// <returns>The <see cref="OpenApiDocument"/>.</returns>
-        public static Task<OpenApiDocument> FromYamlAsync(string data, CancellationToken cancellationToken = default)
-        {
-            return FromYamlAsync(data, null, SchemaType.Swagger2, null, cancellationToken);
-        }
-
-        /// <summary>Creates a Swagger specification from a YAML string.</summary>
-        /// <param name="data">The JSON or YAML data.</param>
         /// <param name="documentPath">The document path (URL or file path) for resolving relative document references.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>The <see cref="OpenApiDocument"/>.</returns>
@@ -63,15 +54,6 @@ namespace NSwag
             CancellationToken cancellationToken = default)
             => await FromYamlAsync(new StringReader(data), documentPath, expectedSchemaType, referenceResolverFactory,
                 cancellationToken);
-
-        /// <summary>Creates a Swagger specification from a YAML text stream.</summary>
-        /// <param name="data">The JSON or YAML data.</param>
-        /// <param name="cancellationToken">The cancellation token.</param>
-        /// <returns>The <see cref="OpenApiDocument"/>.</returns>
-        public static Task<OpenApiDocument> FromYamlAsync(TextReader data, CancellationToken cancellationToken = default)
-        {
-            return FromYamlAsync(data, null, SchemaType.Swagger2, null, cancellationToken);
-        }
 
         /// <summary>Creates a Swagger specification from a YAML text stream.</summary>
         /// <param name="data">The JSON or YAML data.</param>

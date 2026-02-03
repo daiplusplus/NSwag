@@ -73,6 +73,9 @@ namespace NSwag.Generation
         /// <summary>Gets or sets the document template representing the initial Swagger specification (JSON data).</summary>
         public string DocumentTemplate { get; set; }
 
+        /// <summary><inheritdoc cref="NSwag.OpenApiDocument.FromJsonAsync(string, string, CancellationToken)" path="/param[@name='documentPath']" /></summary>
+        public string DocumenPath { get; set; }
+
         /// <summary>
         /// Gets or sets a value indicating whether controllers' XML documentation will be used as tag descriptions (but only when the controller name is used as a tag, default: false).
         /// </summary>

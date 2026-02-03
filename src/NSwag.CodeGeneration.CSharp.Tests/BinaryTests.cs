@@ -44,7 +44,7 @@ components:
           type: string
           format: uuid";
 
-            var document = await OpenApiYamlDocument.FromYamlAsync(yaml);
+            var document = await OpenApiYamlDocument.FromYamlAsync(yaml, documentPath: null);
 
             // Act
             var codeGenerator = new CSharpClientGenerator(document, new CSharpClientGeneratorSettings());
@@ -95,7 +95,7 @@ components:
           type: string
           format: uuid";
 
-            var document = await OpenApiYamlDocument.FromYamlAsync(yaml);
+            var document = await OpenApiYamlDocument.FromYamlAsync(yaml, documentPath: null);
 
             // Act
             CSharpControllerGeneratorSettings settings = new CSharpControllerGeneratorSettings();
@@ -150,7 +150,7 @@ components:
           type: string
           format: uuid";
 
-            var document = await OpenApiYamlDocument.FromYamlAsync(yaml);
+            var document = await OpenApiYamlDocument.FromYamlAsync(yaml, documentPath: null);
 
             // Act
             CSharpControllerGeneratorSettings settings = new CSharpControllerGeneratorSettings();
@@ -428,7 +428,7 @@ components:
       - file
       - model";
 
-            var document = await OpenApiYamlDocument.FromYamlAsync(yaml);
+            var document = await OpenApiYamlDocument.FromYamlAsync(yaml, documentPath: null);
 
             // Act
             var codeGenerator = new CSharpClientGenerator(document, new CSharpClientGeneratorSettings());
@@ -490,7 +490,7 @@ components:
           type: string
           format: uuid";
 
-            var document = await OpenApiYamlDocument.FromYamlAsync(yaml);
+            var document = await OpenApiYamlDocument.FromYamlAsync(yaml, documentPath: null);
 
             // Act
             var codeGenerator = new CSharpClientGenerator(document, new CSharpClientGeneratorSettings());
@@ -500,7 +500,7 @@ components:
             await VerifyHelper.Verify(code);
             CSharpCompiler.AssertCompile(code);
         }
-        
+
         [Fact]
         public async Task When_response_body_is_binary_then_IActionResult_is_used_as_return_type_in_CSharp_ASPNETCore()
         {
@@ -526,7 +526,7 @@ paths:
                 type: string
                 format: binary";
 
-          var document = await OpenApiYamlDocument.FromYamlAsync(yaml);
+          var document = await OpenApiYamlDocument.FromYamlAsync(yaml, documentPath: null);
 
           // Act
           CSharpControllerGeneratorSettings settings = new CSharpControllerGeneratorSettings
@@ -534,9 +534,9 @@ paths:
             ControllerTarget = CSharpControllerTarget.AspNetCore,
             ControllerStyle = CSharpControllerStyle.Abstract,
             UseActionResultType = true,
-                
+
           };
-            
+
           var codeGenerator = new CSharpControllerGenerator(document, settings);
           var code = codeGenerator.GenerateFile();
 

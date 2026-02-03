@@ -13,7 +13,7 @@ namespace NSwag.Core.Tests.Serialization
 
             // Act
             var json = document.ToJson(SchemaType.Swagger2);
-            document = await OpenApiDocument.FromJsonAsync(json);
+            document = await OpenApiDocument.FromJsonAsync(json, documentPath: null);
 
             // Assert
             Assert.Contains(@"""swagger""", json);
@@ -33,7 +33,7 @@ namespace NSwag.Core.Tests.Serialization
 
             // Act
             var json = document.ToJson(SchemaType.OpenApi3);
-            document = await OpenApiDocument.FromJsonAsync(json);
+            document = await OpenApiDocument.FromJsonAsync(json, documentPath: null);
 
             // Assert
             Assert.DoesNotContain(@"""swagger""", json);
@@ -87,7 +87,7 @@ namespace NSwag.Core.Tests.Serialization
   }
 }";
             // Act
-            var document = await OpenApiDocument.FromJsonAsync(json);
+            var document = await OpenApiDocument.FromJsonAsync(json, documentPath: null);
 
             // Assert
             Assert.True(document.Components.Schemas["PurchaseReadDto2"].IsNullableRaw);
